@@ -21,8 +21,8 @@ public class App {
 
         for (int i = 0; i < numberOfStudents; i++) {
             students[i] = new Student();
-            System.out.print("Please enter the name of student: " + (i + 1) + " and press [ENTER]: ");
-            students[i].name = scanner.nextLine();
+            System.out.print("Please enter the name of student: " + (i+1) + " and press [ENTER]: ");
+            students[i].name = scanner.next();
         }
         System.out.println();
 
@@ -32,8 +32,8 @@ public class App {
         System.out.println();
 
         for (int i = 0; i < numberOfStudents; i++){
-            System.out.print("Is student #" + (i+1) + "(" + students[i] + ") present? [Y/N + ENTER]: ");
-            String answer = scanner.nextLine();
+            System.out.print("Is student #" + (i+1) + "(" + students[i].name + ") present? [Y/N + ENTER]: ");
+            String answer = scanner.next();
 
             if (answer.equals("y") || answer.equals("Y".toLowerCase())) {
                 students[i].present = true;
@@ -42,7 +42,8 @@ public class App {
         System.out.println();
 
         for (int i = 0; i < numberOfStudents; i++) {
-            System.out.println("Student #" + (i+1) + ": " + students[i].name + "    " + students[i].toString());
+            System.out.println("Student #" + (i+1) + ": " + students[i].name +    "| Present: " +
+                    "" + students[i].present);
         }
     }
 }
