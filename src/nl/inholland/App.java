@@ -27,7 +27,7 @@ public class App {
         System.out.println();
 
         for (int i = 0; i < numberOfStudents; i++){
-            System.out.println("Student #" + (i+1) + ": " + students[i]);
+            System.out.println("Student #" + (i+1) + ": " + students[i].name);
         }
         System.out.println();
 
@@ -35,13 +35,14 @@ public class App {
             System.out.print("Is student #" + (i+1) + "(" + students[i] + ") present? [Y/N + ENTER]: ");
             String answer = scanner.nextLine();
 
-            if (answer == "y" || answer == "Y".toLowerCase()) {
+            if (answer.equals("y") || answer.equals("Y".toLowerCase())) {
                 students[i].present = true;
             }
         }
+        System.out.println();
 
         for (int i = 0; i < numberOfStudents; i++) {
-            System.out.println("Student #" + (i+1) + ": " + students[i].name + "| Present: " +        "| Present: " + students[i].present);
+            System.out.println("Student #" + (i+1) + ": " + students[i].name + "    " + students[i].toString());
         }
     }
 }
